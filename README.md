@@ -9,20 +9,15 @@
     <img src="https://github.com/h4fide/atv18/blob/main/assets/icon.png" alt="ATV18 Logo" width="200">
 </div>
 <div align="center">
-<button style="background-color:rgb(7, 0, 30); color: white; padding: 10px 20px; border-color: rgb(153, 102, 236); border-radius: 5px; cursor: pointer; space-between: 10px; display: inline-flex; font-size: 16px; font-weight: bold;">
-    <a href="https://github.com/h4fide/atv18/releases/tag/v1.0.0-alpha" style="color: white; text-decoration: none;">Download APK</a>
-</button>
+<h3><a href="https://github.com/h4fide/atv18/releases/tag/v1.0.0-alpha">Download APK</a></h3>
 </div>
 
-<br>
+---
 <p align="center">
 <a href="https://github.com/h4fide/atv18/releases"><img src="https://img.shields.io/github/v/release/h4fide/atv18" alt="Version"></a>
 <a href="https://github.com/h4fide/atv18/commits"><img src="https://img.shields.io/github/last-commit/h4fide/atv18" alt="Last Commit"></a>
 </p>
 
-
-
----
 
 ## Features (Alpha) 🚀
 
