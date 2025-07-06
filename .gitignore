@@ -11,6 +11,9 @@
 .svn/
 .swiftpm/
 migrate_working_dir/
+.git/*
+.gitignore
+.vscode/*
 
 # IntelliJ related
 *.iml
