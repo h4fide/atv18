@@ -14,7 +14,7 @@
 
 ---
 
-## Features (Alpha)
+## Features (Alpha) 🚀
 
 
 - Simple user interface
@@ -24,7 +24,7 @@
 - Open source and easy to extend
 - Core functionality implemented, but still under heavy development
 
-## Known Issues
+## Known Issues ⚠️
 
 - Limited features compared to planned final version
 - Animation requires a higher frequency (Hz) to appear more realistic
@@ -32,7 +32,7 @@
 
 ---
 
-## Preset Speeds
+## Preset Speeds 
 
 - **LSP**: Low speed (petite vitesse)
 - **HSP**: High speed (grande vitesse)
@@ -54,7 +54,7 @@
 
 ---
 
-## See the Real ATV18 VFD
+## See the Real ATV18 VFD 
 
 To better understand how the simulator matches the real device, you can view images and documentation of the actual ATV18 Variable Frequency Drive:
 
@@ -63,7 +63,7 @@ To better understand how the simulator matches the real device, you can view ima
     <img src="https://github.com/user-attachments/assets/68a4b1f4-3ceb-4fdc-902a-00a959b35785" alt="ATV18 Image" width="400">
 </div>
 
-### Read the Official Manual
+### Read the Official Manual 
 
 For detailed technical information, wiring diagrams, and parameter descriptions, refer to the official ATV18 manual:
 
@@ -71,9 +71,9 @@ For detailed technical information, wiring diagrams, and parameter descriptions,
 - You can also open the PDF directly in your browser or preferred PDF reader for reference while using the simulator.
 
 ---
-## Main Parameters
+## Main Parameters 
 
-> **Note:** The following parameters are not yet implemented in the simulator, but are essential for understanding ATV18 VFD operation.
+> **⚠️ Note:** The following parameters are not yet implemented in the simulator, but are essential for understanding ATV18 VFD operation.
 
 ### Display Parameters (Read-Only)
 
@@ -117,11 +117,11 @@ For detailed technical information, wiring diagrams, and parameter descriptions,
 
 ---
 
-## How to Contribute
+## How to Contribute 
 Contributions and feedback are welcome! Please report bugs or feature requests via the Issues tab or contact me directly.
 
 ---
 
-## License
+## License 
 
 This project is licensed under the MIT License.
