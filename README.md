@@ -89,57 +89,31 @@ For detailed technical information, wiring diagrams, and parameter descriptions,
 ---
 
 ### Adjustable Parameters (Configuration & Optimization)
+### Motor-Specific Settings
 
-#### Motor-Specific Settings
-
-- **bFr** (Base Frequency):  
-    Recommended: `50Hz` (preset voltage: 400V/50Hz for ATV18...N4 models).  
-    _Match the motor’s nameplate frequency (e.g., 50Hz or 60Hz). Adjust only when stopped._
-
-- **ItH** (Motor Thermal Protection):  
-    Recommended: `1.0 ×` motor’s rated current (check nameplate).  
-    _Example: For a 30A motor, set to 30A (drive’s nominal current must support this)._
-
-- **ACC / dEC** (Acceleration / Deceleration Ramps):  
-    - **ACC:** 10–20 seconds (gradual ramp-up for mechanical stress reduction)  
-    - **dEC:** 10–20 seconds (prevents abrupt stops)  
-    _Adjust based on load inertia (longer ramps for high-inertia systems)._
-
-- **LSP / HSP** (Low / High Speed):  
-    - **LSP:** 5–10Hz (prevents motor stalling at low speeds)  
-    - **HSP:** 50Hz (factory default; increase up to 60Hz if motor permits)  
-
-- **FLG** (Frequency Loop Gain):  
-    Start at 50% and adjust based on system response.  
-    _Reduce for high-inertia loads (e.g., conveyors). Increase for low-inertia, fast-cycle applications (e.g., pumps)._
-
-- **JPF** (Critical Speed Suppression):  
-    Set to resonance frequency ±1Hz (e.g., 25Hz → block 24–26Hz).  
-    _Disable (set to 0) if no resonance issues are observed._
-
-- **Idc / tdc** (DC Injection Braking):  
-    - **Idc:** 0.8 × drive’s nominal current (e.g., 20A drive → 16A)  
-    - **tdc:** 2–5 seconds (adjust to prevent motor overheating)  
-
-- **UFr** (Low-Speed Torque Optimization):  
-    Recommended: 50–70% to enhance torque below 10Hz (e.g., for conveyors or mixers).
-
-- **JOG** (Jog Speed):  
-    Recommended: 10–15Hz (for precise positioning during maintenance).
-
-- **Fdt** (Frequency Threshold):  
-    Set to 5Hz (triggers LO output when frequency drops below threshold).
+| Parameter      | Description                          | Recommended Setting / Guidance |
+|----------------|--------------------------------------|-------------------------------|
+| **bFr**        | Base Frequency                       | 50Hz (preset voltage: 400V/50Hz for ATV18...N4 models). Match motor’s nameplate frequency (e.g., 50Hz or 60Hz). Adjust only when stopped. |
+| **ItH**        | Motor Thermal Protection             | 1.0 × motor’s rated current (check nameplate). Example: For a 30A motor, set to 30A. Drive’s nominal current must support this. |
+| **ACC / dEC**  | Acceleration / Deceleration Ramps    | ACC: 10–20s (gradual ramp-up); dEC: 10–20s (prevents abrupt stops). Adjust based on load inertia. |
+| **LSP / HSP**  | Low / High Speed                     | LSP: 5–10Hz (prevents stalling); HSP: 50Hz (default, up to 60Hz if motor permits). |
+| **FLG**        | Frequency Loop Gain                  | Start at 50%. Reduce for high-inertia loads; increase for low-inertia, fast-cycle applications. |
+| **JPF**        | Critical Speed Suppression           | Set to resonance frequency ±1Hz (e.g., 25Hz → block 24–26Hz). Set to 0 if no resonance issues. |
+| **Idc / tdc**  | DC Injection Braking                 | Idc: 0.8 × drive’s nominal current (e.g., 20A drive → 16A); tdc: 2–5s (adjust to prevent overheating). |
+| **UFr**        | Low-Speed Torque Optimization        | 50–70% to enhance torque below 10Hz (e.g., conveyors, mixers). |
+| **JOG**        | Jog Speed                            | 10–15Hz (for precise positioning during maintenance). |
+| **Fdt**        | Frequency Threshold                  | 5Hz (triggers LO output when frequency drops below threshold). |
 
 ---
 
-#### Advanced Control Parameters
+### Advanced Control Parameters
 
-- **rPG / rIG** (PI Regulator Gains):  
-    - **rPG (Proportional Gain):** Start at 20%; increase for faster response.  
-    - **rIG (Integral Gain):** Start at 10%; adjust to minimize steady-state error.
+| Parameter      | Description                          | Recommended Setting / Guidance |
+|----------------|--------------------------------------|-------------------------------|
+| **rPG**        | PI Regulator Proportional Gain       | Start at 20%; increase for faster response. |
+| **rIG**        | PI Regulator Integral Gain           | Start at 10%; adjust to minimize steady-state error. |
+| **FbS**        | Feedback Coefficient                 | Set to 1.0 (default); adjust if using external feedback (e.g., encoder). |
 
-- **FbS** (Feedback Coefficient):  
-    Set to 1.0 (default); adjust if using external feedback (e.g., encoder).
 
 ---
 
