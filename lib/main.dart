@@ -375,11 +375,11 @@ class _VFDSimulatorScreenState extends State<VFDSimulatorScreen> with TickerProv
           children: [
             _buildCircularButton(
               icon: Icons.keyboard_arrow_up,
-              onPressed: _downButton, 
+              onPressed: _upButton,
               onLongPressStart: (_) {
                 _buttonRepeatTimer = Timer.periodic(
                   const Duration(milliseconds: 100),
-                  (_) => _downButton(), 
+                  (_) => _upButton(),
                 );
               },
               onLongPressEnd: (_) {
@@ -389,11 +389,11 @@ class _VFDSimulatorScreenState extends State<VFDSimulatorScreen> with TickerProv
             ),
             _buildCircularButton(
               icon: Icons.keyboard_arrow_down,
-              onPressed: _upButton, 
+              onPressed: _downButton,
               onLongPressStart: (_) {
                 _buttonRepeatTimer = Timer.periodic(
                   const Duration(milliseconds: 100),
-                  (_) => _upButton(), 
+                  (_) => _downButton(),
                 );
               },
               onLongPressEnd: (_) {

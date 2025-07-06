@@ -26,7 +26,6 @@
 
 ## Known Issues ⚠️
 
-- Button functions are reversed will be fixed in a future update ( hopefully :) )
 - Limited features compared to planned final version
 - Animation requires a higher frequency (Hz) to appear more realistic
 - Some Parameters are not yet implemented
