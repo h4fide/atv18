@@ -63,13 +63,85 @@ To better understand how the simulator matches the real device, you can view ima
     <img src="https://github.com/user-attachments/assets/68a4b1f4-3ceb-4fdc-902a-00a959b35785" alt="ATV18 Image" width="400">
 </div>
 
-## Read the Official Manual
+### Read the Official Manual
 
 For detailed technical information, wiring diagrams, and parameter descriptions, refer to the official ATV18 manual:
 
 - [ATV18 User Manual (PDF)](https://download.schneider-electric.com/files?p_enDocType=User+guide&p_File_Name=1624542.pdf&p_Doc_Ref=1624542)
 - You can also open the PDF directly in your browser or preferred PDF reader for reference while using the simulator.
 
+---
+## Main Parameters
+
+> **Note:** The following parameters are not yet implemented in the simulator, but are essential for understanding ATV18 VFD operation.
+
+### Display Parameters (Read-Only)
+
+| Parameter | Description | Behavior / Guidance |
+|-----------|-------------|---------------------|
+| **rdY**   | Variator Ready | Indicates drive readiness (no fault detected).<br>_Monitor for operational status._ |
+| **FrH**   | Frequency Setpoint | Displays target motor frequency (Hz).<br>_Ensure it aligns with application speed requirements._ |
+| **LCr**   | Motor Current | Shows real-time current draw (Amps).<br>_Monitor to avoid exceeding motor’s rated current._ |
+| **rFr**   | Rotation Frequency | Displays actual motor speed (Hz).<br>_Compare with FrH to verify speed alignment._ |
+| **ULn**   | Mains Voltage | Displays input voltage (Volts).<br>_Ensure stability (e.g., 400V ±10% for your motor)._ |
+| **FLt**   | Last Fault | Shows recent fault code (e.g., "nErr" for no fault).<br>_Troubleshoot if errors persist._ |
+
+---
+
+### Adjustable Parameters (Configuration & Optimization)
+
+#### Motor-Specific Settings
+
+- **bFr** (Base Frequency):  
+    Recommended: `50Hz` (preset voltage: 400V/50Hz for ATV18...N4 models).  
+    _Match the motor’s nameplate frequency (e.g., 50Hz or 60Hz). Adjust only when stopped._
+
+- **ItH** (Motor Thermal Protection):  
+    Recommended: `1.0 ×` motor’s rated current (check nameplate).  
+    _Example: For a 30A motor, set to 30A (drive’s nominal current must support this)._
+
+- **ACC / dEC** (Acceleration / Deceleration Ramps):  
+    - **ACC:** 10–20 seconds (gradual ramp-up for mechanical stress reduction)  
+    - **dEC:** 10–20 seconds (prevents abrupt stops)  
+    _Adjust based on load inertia (longer ramps for high-inertia systems)._
+
+- **LSP / HSP** (Low / High Speed):  
+    - **LSP:** 5–10Hz (prevents motor stalling at low speeds)  
+    - **HSP:** 50Hz (factory default; increase up to 60Hz if motor permits)  
+
+- **FLG** (Frequency Loop Gain):  
+    Start at 50% and adjust based on system response.  
+    _Reduce for high-inertia loads (e.g., conveyors). Increase for low-inertia, fast-cycle applications (e.g., pumps)._
+
+- **JPF** (Critical Speed Suppression):  
+    Set to resonance frequency ±1Hz (e.g., 25Hz → block 24–26Hz).  
+    _Disable (set to 0) if no resonance issues are observed._
+
+- **Idc / tdc** (DC Injection Braking):  
+    - **Idc:** 0.8 × drive’s nominal current (e.g., 20A drive → 16A)  
+    - **tdc:** 2–5 seconds (adjust to prevent motor overheating)  
+
+- **UFr** (Low-Speed Torque Optimization):  
+    Recommended: 50–70% to enhance torque below 10Hz (e.g., for conveyors or mixers).
+
+- **JOG** (Jog Speed):  
+    Recommended: 10–15Hz (for precise positioning during maintenance).
+
+- **Fdt** (Frequency Threshold):  
+    Set to 5Hz (triggers LO output when frequency drops below threshold).
+
+---
+
+#### Advanced Control Parameters
+
+- **rPG / rIG** (PI Regulator Gains):  
+    - **rPG (Proportional Gain):** Start at 20%; increase for faster response.  
+    - **rIG (Integral Gain):** Start at 10%; adjust to minimize steady-state error.
+
+- **FbS** (Feedback Coefficient):  
+    Set to 1.0 (default); adjust if using external feedback (e.g., encoder).
+
+---
 
 ## How to Contribute
 Contributions and feedback are welcome! Please report bugs or feature requests via the Issues tab or contact me directly.
