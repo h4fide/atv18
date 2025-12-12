@@ -3,7 +3,7 @@
 **Version:** 1.0.0-alpha  
 **Status:** Alpha Release (Early Testing)
 
-**ATV18 Simulator** for Variable Frequency Drive (VFD) is an Android application designed to simulate the logic and speed selection of the ATV18 VFD. This app is intended for educational and testing purposes, allowing users to interact with a simulated VFD environment.
+**Telemecanique Altivar 18 Simulator** for Variable Frequency Drive (VFD) is an Android application designed to simulate the logic and speed selection of the ATV18 VFD. This app is intended for educational and testing purposes, allowing users to interact with a simulated VFD environment.
 
 <div align="center">
     <img src="https://github.com/h4fide/atv18/blob/main/assets/icon.png" alt="ATV18 Logo" width="200">
